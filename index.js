@@ -1,20 +1,18 @@
-//search engine
 function displayTemperature(response) {
   console.log(response.data);
-  //when console.log -need to search for city to see result
+
   let temperatureElement = document.querySelector("#current-temperature-value");
   let temperature = Math.round(response.data.temperature.current);
-  // moved city element
+
   let cityElement = document.querySelector("#current-city");
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
 }
-// search engine and city search plus selector replace city h1 in HTML but now city is moved to function displayTemperature
+
 function search(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
-  // we moved city element from here to function displayTemperature so if someone search or
-  //mistype city name with capital letters function display temperature will correct to what is in json package
+
   let city = searchInputElement.value;
 
   let apiKey = "6f64aatd0b0oe3cc63e4fb944c32303a";
